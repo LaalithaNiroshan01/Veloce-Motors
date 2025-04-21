@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="loginstyles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img class="background-image" src="images/Header1.png" alt="Background" />
+      <div class="overlay"></div>
+      <div class="signup-form">
+        <div class="form-header">
+          <h1>Login</h1>
+          <p>Login to access your Golobe account.</p>
+        </div>
+        <div class="form-content">
+          <div class="form-fields">
+            <div class="email-field">
+              <div class="input-field">
+                <input type="email" id="email" placeholder=" " />
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="password-field">
+              <div class="input-field">
+                <input type="password" id="password" placeholder=" " />
+                <label for="password">Password</label>
+                <button class="toggle-password" type="button"></button>
+              </div>
+            </div>
+            <div class="terms-checkbox">
+              <input type="checkbox" id="terms" />
+              <label for="terms">Remember me</label>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button
+              class="create-account-btn"
+              type="button"
+              onclick="location.href='home.html'"
+            >
+              Login
+            </button>
+            <p class="login-link">
+              I don't have an account? <a href="signup.html">Sign up</a>
+            </p>
+          </div>
+          <div class="divider">
+            <div class="line"></div>
+            <span>Or Login with</span>
+            <div class="line"></div>
+          </div>
+          <div class="social-login">
+            <button class="social-btn facebook"></button>
+            <button class="social-btn google"></button>
+            <button class="social-btn apple"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>

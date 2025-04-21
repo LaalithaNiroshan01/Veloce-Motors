@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="container">
+        <img class="background-image" src="images/Header3.jpg" alt="Background" />
+        <div class="overlay"></div>
+        <div class="signup-form">
+            <div class="form-header">
+                <h1>Sign up</h1>
+                <p>Let's get you all set up so you can access your personal account.</p>
+            </div>
+            <form class="form-content" id="signupForm" novalidate>
+                <div class="form-fields">
+                    <div class="name-fields">
+                        <div class="input-field">
+                            <input type="text" id="firstName" placeholder=" ">
+                            <label for="firstName">First Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="lastName" placeholder=" ">
+                            <label for="lastName">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="email-field">
+                        <div class="input-field">
+                            <input type="email" id="email" placeholder=" "aria-describedby="passwordHelp"
+                            aria-required="true"
+                          >
+
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="password-field">
+                        <div class="input-field">
+                            <input type="password" id="password" placeholder=" ">
+                            <label for="password">Password</label>
+                            <button class="toggle-password" type="button"></button>
+                        </div>
+                    </div>
+                    <div class="confirm-password-field">
+                        <div class="input-field">
+                            <input type="password" id="confirmPassword" placeholder=" ">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <button class="toggle-password" type="button"></button>
+                        </div>
+                    </div>
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">I agree to all the <a href="#">Terms</a> and <a href="#">Privacy Policies</a></label>
+                    </div>
+                </div>
+            </form>
+                <div class="form-actions">
+                    <button type="submit" class="create-account-btn">Create account</button>
+                    <p class="login-link">Already have an account? <a href="index.html">Login</a></p>
+                </div>
+                <div class="divider">
+                    <div class="line"></div>
+                    <span>Or Sign up with</span>
+                    <div class="line"></div>
+                </div>
+                <div class="social-login">
+                    <button class="social-btn facebook"></button>
+                    <button class="social-btn google"></button>
+                    <button class="social-btn apple"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="signup.js"></script>
+</body>
+</html>

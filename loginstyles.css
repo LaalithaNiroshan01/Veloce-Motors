@@ -1,0 +1,223 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(0deg, #01001e 0%, #050c14 57%);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  background: black;
+}
+
+.signup-form {
+  width: 90%;
+  max-width: 750px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  color: white;
+  box-sizing: border-box;
+  z-index: 1;
+  margin-left: 50%;
+}
+
+.form-header h1 {
+  font-size: 28px;
+  font-family: "TradeGothic LT Extended", sans-serif;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.form-header p {
+  opacity: 0.75;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  gap: 15px;
+}
+
+.input-field {
+  position: relative;
+  flex: 1;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #79747e;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.input-field label {
+  position: absolute;
+  left: 12px;
+  top: -8px;
+  background: white;
+  padding: 0 4px;
+  font-size: 12px;
+  color: #1c1b1f;
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.terms-checkbox input {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+}
+
+.terms-checkbox label {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.create-account-btn {
+  width: 100%;
+  padding: 12px;
+  background: #8dd3bb;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+.create-account-btn:hover {
+  background: #74c0a3;
+}
+
+.login-link {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.login-link a {
+  color: #ff8682;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: white;
+  opacity: 0.25;
+}
+
+.divider span {
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #8dd3bb;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .signup-form {
+    padding: 30px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .signup-form {
+    padding: 20px;
+  }
+
+  .form-header h1 {
+    font-size: 24px;
+  }
+
+  .form-header p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+}
