@@ -3,76 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Form</title>
+    <meta name="description" content="Veloce Motors - Create your account and join the luxury car experience">
+    <meta name="theme-color" content="#01001e">
+    <title>Veloce Motors - Sign Up</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="signup.css">
 </head>
 <body>
     <div class="container">
-        <img class="background-image" src="images/Header3.jpg" alt="Background" />
-        <div class="overlay"></div>
-        <div class="signup-form">
-            <div class="form-header">
-                <h1>Sign up</h1>
-                <p>Let's get you all set up so you can access your personal account.</p>
-            </div>
-            <form class="form-content" id="signupForm" novalidate>
-                <div class="form-fields">
-                    <div class="name-fields">
-                        <div class="input-field">
-                            <input type="text" id="firstName" placeholder=" ">
-                            <label for="firstName">First Name</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="text" id="lastName" placeholder=" ">
-                            <label for="lastName">Last Name</label>
-                        </div>
-                    </div>
-                    <div class="email-field">
-                        <div class="input-field">
-                            <input type="email" id="email" placeholder=" "aria-describedby="passwordHelp"
-                            aria-required="true"
-                          >
-
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="password-field">
-                        <div class="input-field">
-                            <input type="password" id="password" placeholder=" ">
-                            <label for="password">Password</label>
-                            <button class="toggle-password" type="button"></button>
-                        </div>
-                    </div>
-                    <div class="confirm-password-field">
-                        <div class="input-field">
-                            <input type="password" id="confirmPassword" placeholder=" ">
-                            <label for="confirmPassword">Confirm Password</label>
-                            <button class="toggle-password" type="button"></button>
-                        </div>
-                    </div>
-                    <div class="terms-checkbox">
-                        <input type="checkbox" id="terms">
-                        <label for="terms">I agree to all the <a href="#">Terms</a> and <a href="#">Privacy Policies</a></label>
-                    </div>
-                </div>
-            </form>
-                <div class="form-actions">
-                    <button type="submit" class="create-account-btn">Create account</button>
-                    <p class="login-link">Already have an account? <a href="index.html">Login</a></p>
-                </div>
-                <div class="divider">
-                    <div class="line"></div>
-                    <span>Or Sign up with</span>
-                    <div class="line"></div>
-                </div>
-                <div class="social-login">
-                    <button class="social-btn facebook"></button>
-                    <button class="social-btn google"></button>
-                    <button class="social-btn apple"></button>
-                </div>
-            </div>
+        <div class="background-wrapper">
+            <img class="background-image" src="images/Header3.jpg" alt="Luxury car background">
+            <div class="overlay"></div>
         </div>
+        
+        <main class="signup-container">
+            <div class="signup-form">
+                <div class="form-header">
+                    <h1>Create Account</h1>
+                    <p>Join Veloce Motors and experience luxury like never before</p>
+                </div>
+
+                <form id="signupForm" class="form-content" novalidate>
+                    <div class="form-fields">
+                        <div class="name-fields">
+                            <div class="input-field">
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName"
+                                    placeholder=" "
+                                    required
+                                    autocomplete="given-name"
+                                    aria-label="First name"
+                                >
+                                <label for="firstName">First Name</label>
+                                <i class="fas fa-user input-icon"></i>
+                            </div>
+                            <div class="input-field">
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName"
+                                    placeholder=" "
+                                    required
+                                    autocomplete="family-name"
+                                    aria-label="Last name"
+                                >
+                                <label for="lastName">Last Name</label>
+                                <i class="fas fa-user input-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="input-field">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                placeholder=" "
+                                required
+                                autocomplete="email"
+                                aria-label="Email address"
+                            >
+                            <label for="email">Email</label>
+                            <i class="fas fa-envelope input-icon"></i>
+                        </div>
+
+                        <div class="input-field">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password"
+                                placeholder=" "
+                                required
+                                autocomplete="new-password"
+                                aria-label="Password"
+                                minlength="6"
+                            >
+                            <label for="password">Password</label>
+                            <i class="fas fa-lock input-icon"></i>
+                            <button 
+                                type="button"
+                                class="toggle-password" 
+                                aria-label="Toggle password visibility"
+                            >
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+
+                        <div class="input-field">
+                            <input 
+                                type="password" 
+                                id="confirmPassword" 
+                                name="confirmPassword"
+                                placeholder=" "
+                                required
+                                autocomplete="new-password"
+                                aria-label="Confirm password"
+                            >
+                            <label for="confirmPassword">Confirm Password</label>
+                            <i class="fas fa-lock input-icon"></i>
+                            <button 
+                                type="button"
+                                class="toggle-password" 
+                                aria-label="Toggle password visibility"
+                            >
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+
+                        <div class="terms-checkbox">
+                            <label class="checkbox-container">
+                                <input 
+                                    type="checkbox" 
+                                    id="terms" 
+                                    name="terms"
+                                    required
+                                >
+                                <span class="checkmark"></span>
+                                <span class="terms-text">
+                                    I agree to the <a href="#" class="terms-link">Terms of Service</a> and 
+                                    <a href="#" class="terms-link">Privacy Policy</a>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="signup-btn">
+                            <span class="btn-text">Create Account</span>
+                            <div class="btn-loader"></div>
+                        </button>
+                        
+                        <p class="login-link">
+                            Already have an account? <a href="index.html">Login</a>
+                        </p>
+                    </div>
+
+                    <div class="divider">
+                        <span class="divider-line"></span>
+                        <span class="divider-text">Or sign up with</span>
+                        <span class="divider-line"></span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="social-btn google" aria-label="Sign up with Google">
+                            <i class="fab fa-google"></i>
+                        </button>
+                        <button type="button" class="social-btn facebook" aria-label="Sign up with Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button type="button" class="social-btn apple" aria-label="Sign up with Apple">
+                            <i class="fab fa-apple"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
     </div>
+
+    <div id="errorToast" class="toast" role="alert" aria-live="assertive"></div>
     <script src="signup.js"></script>
 </body>
 </html>

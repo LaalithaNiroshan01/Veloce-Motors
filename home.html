@@ -3,183 +3,361 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Veloce Motors</title>
+    <meta name="description" content="Veloce Motors - Luxury and performance vehicles crafted for speed, precision, and achievement." />
+    <meta name="theme-color" content="#01001e" />
+    <title>Veloce Motors - Luxury Performance Vehicles</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&family=Poppins:wght@700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="homestyles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Roboto:wght@400;600;700&family=Poppins:wght@700&family=Work+Sans:wght@300;700&display=swap"
-      rel="stylesheet"
-    />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
     <div class="container">
+      <!-- Header -->
       <header class="header">
         <nav class="navbar">
-          <div class="nav-item">about</div>
-          <div class="nav-item">pricing</div>
-          <div class="nav-item">contact</div>
+          <a href="/" class="logo" aria-label="Veloce Motors Home">
+            <object data="images/logo.svg" type="image/svg+xml" width="200" height="50" class="logo-svg">
+              <img src="images/logo.png" alt="Veloce Motors Logo" />
+            </object>
+          </a>
+          <div class="nav-links">
+            <a href="#home" class="nav-item active">Home</a>
+            <a href="#features" class="nav-item">Features</a>
+            <a href="#performance" class="nav-item">Performance</a>
+            <a href="#showcase" class="nav-item">Showcase</a>
+            <a href="#products" class="nav-item">Models</a>
+            <a href="#contact" class="nav-item">Contact</a>
+          </div>
+          <div class="nav-actions">
+            <a href="index.html" class="btn-login">Login</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </nav>
       </header>
 
       <main>
-        <section class="hero">
-          <img class="hero-bg" src="images/Header2.jpg" alt="Hero background" />
-          <div class="red-blob"></div>
-          <div class="black-blob"></div>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+          <div class="hero-media">
+            <img class="hero-bg" src="images/Header2.jpg" alt="Veloce Motors luxury vehicle showcase" />
+            <div class="hero-overlay"></div>
+            <div class="red-blob"></div>
+            <div class="black-blob"></div>
+          </div>
           <div class="hero-content">
-            <h1>Veloce Motors</h1>
-            <p>Drive the Difference</p>
-            <button class="btn-primary">What's New</button>
+            <h1 class="animate-on-scroll">Veloce Motors</h1>
+            <p class="animate-on-scroll">Drive the Difference</p>
+            <div class="hero-cta animate-on-scroll">
+              <button class="btn-primary" data-scroll-to="products">
+                Explore Models
+                <i class="fas fa-arrow-right"></i>
+              </button>
+              <button class="btn-secondary" data-scroll-to="contact">
+                Book a Test Drive
+                <i class="fas fa-car"></i>
+              </button>
+            </div>
+          </div>
+          <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <i class="fas fa-chevron-down"></i>
           </div>
         </section>
 
-        <section class="features">
-          <div class="feature-card">
-            <img class="feature-icon" src="images/C1.png"Feature icon">
-            <h3>Option 1</h3>
-            <p>Lorem ipsum dolor sit amet,</p>
+        <!-- Features Section -->
+        <section class="features" id="features">
+          <div class="section-header animate-on-scroll">
+            <h2>Why Choose Veloce</h2>
+            <p>Experience the perfect blend of luxury, performance, and innovation</p>
           </div>
-          <div class="feature-card">
-            <img class="feature-icon" src="images/C2.png" alt="Feature icon" />
-            <h3>Option 1</h3>
-            <p>Lorem ipsum dolor sit amet,</p>
-          </div>
-          <div class="feature-card">
-            <img class="feature-icon" src="images/C3.png" alt="Feature icon" />
-            <h3>Option 1</h3>
-            <p>Lorem ipsum dolor sit amet,</p>
+          <div class="features-grid">
+            <div class="feature-card animate-on-scroll">
+              <div class="feature-icon">
+                <img src="images/C1.png" alt="Performance icon" loading="lazy" />
+              </div>
+              <h3>Unmatched Performance</h3>
+              <p>Experience the thrill of our high-performance engines and precision engineering</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+              <div class="feature-icon">
+                <img src="images/C2.png" alt="Luxury icon" loading="lazy" />
+              </div>
+              <h3>Luxury Redefined</h3>
+              <p>Indulge in premium materials and cutting-edge technology</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+              <div class="feature-icon">
+                <img src="images/C3.png" alt="Innovation icon" loading="lazy" />
+              </div>
+              <h3>Innovation First</h3>
+              <p>Stay ahead with our advanced features and sustainable solutions</p>
+            </div>
           </div>
         </section>
 
-        <section class="performance">
-          <h2>Performance Meets Ambition</h2>
-          <p>
-            Unleash your ambition with vehicles crafted for speed, precision,
-            and achievement. Designed for the driven, engineered for the
-            extraordinary.
-          </p>
+        <!-- Performance Section -->
+        <section class="performance" id="performance">
+          <div class="performance-content animate-on-scroll">
+            <h2>Performance Meets Ambition</h2>
+            <p>
+              Unleash your ambition with vehicles crafted for speed, precision,
+              and achievement. Designed for the driven, engineered for the
+              extraordinary.
+            </p>
+            <div class="performance-stats">
+              <div class="stat-item">
+                <span class="stat-number">3.2</span>
+                <span class="stat-label">0-100 km/h</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">320</span>
+                <span class="stat-label">Top Speed</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">650</span>
+                <span class="stat-label">Horsepower</span>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section class="car-showcase">
-          <div class="car-card">
-            <img src="images/V8GT.jpg" alt="Veloce V8 GT" />
+        <!-- Car Showcase -->
+        <section class="car-showcase" id="showcase">
+          <div class="car-card animate-on-scroll">
+            <div class="car-media">
+              <img src="images/V8GT.jpg" alt="Veloce V8 GT in action" />
+              <div class="car-overlay"></div>
+            </div>
             <div class="car-info">
               <h3>Veloce V8 GT</h3>
               <p>
-                Pure muscle, precise control.<br />0–100 km/h in
-                3.2s. Aerodynamic to the core.
+                Pure muscle, precise control. Experience the perfect balance of power and handling.
+                From 0–100 km/h in 3.2s. Aerodynamic to the core.
               </p>
-              <button class="btn-secondary">view our pricing</button>
+              <div class="car-specs">
+                <div class="spec-item">
+                  <i class="fas fa-tachometer-alt"></i>
+                  <span>3.2s 0-100 km/h</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-horse"></i>
+                  <span>650 HP</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-gas-pump"></i>
+                  <span>12.5 L/100km</span>
+                </div>
+              </div>
+              <button class="btn-secondary" data-model="v8gt">
+                View Details
+                <i class="fas fa-arrow-right"></i>
+              </button>
             </div>
           </div>
 
-          <div class="car-card reverse">
-            <img src="images/Xtrail.png" alt="Veloce X-Trail R" />
+          <div class="car-card reverse animate-on-scroll">
+            <div class="car-media">
+              <img src="images/Xtrail.png" alt="Veloce X-Trail R off-road" />
+              <div class="car-overlay"></div>
+            </div>
             <div class="car-info">
               <h3>Veloce X-Trail R</h3>
               <p>
-                Built to conquer the wild.<br />Unmatched off-road capability
-                with luxury comfort.
+                Built to conquer the wild. Experience unmatched off-road capability
+                with luxury comfort. Ready for any adventure.
               </p>
-              <button class="btn-secondary">view our pricing</button>
+              <div class="car-specs">
+                <div class="spec-item">
+                  <i class="fas fa-mountain"></i>
+                  <span>45° Approach</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-tachometer-alt"></i>
+                  <span>5.8s 0-100 km/h</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-gas-pump"></i>
+                  <span>9.2 L/100km</span>
+                </div>
+              </div>
+              <button class="btn-secondary" data-model="xtrail">
+                View Details
+                <i class="fas fa-arrow-right"></i>
+              </button>
             </div>
           </div>
         </section>
 
-        <section class="products">
-          <div class="product-card">
-            <img src="images/C1.png" alt="Nexaro Vortex X1" />
-            <h4>Nexaro Vortex X1</h4>
-            <p>
-              Built to conquer the wild. Unmatched off-road capability with
-              luxury comfort.
-            </p>
-            <button class="btn-order">Order</button>
+        <!-- Products Section -->
+        <section class="products" id="products">
+          <div class="section-header animate-on-scroll">
+            <h2>Our Models</h2>
+            <p>Discover our range of luxury performance vehicles</p>
           </div>
-          <div class="product-card">
-            <img src="images/C2.png" alt="Nexaro Vortex X1" />
-            <h4>Nexaro Vortex X1</h4>
-            <p>
-              Built to conquer the wild. Unmatched off-road capability with
-              luxury comfort.
-            </p>
-            <button class="btn-order">Order</button>
-          </div>
-          <div class="product-card">
-            <img src="images/C3.png" alt="Nexaro Vortex X1" />
-            <h4>Nexaro Vortex X1</h4>
-            <p>
-              Built to conquer the wild. Unmatched off-road capability with
-              luxury comfort.
-            </p>
-            <button class="btn-order">Order</button>
+          <div class="products-grid">
+            <div class="product-card animate-on-scroll">
+              <div class="product-media">
+                <img src="images/C1.png" alt="Nexaro Vortex X1" />
+                <div class="product-overlay">
+                  <button class="btn-quick-view" data-model="vortex">
+                    Quick View
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h4>Nexaro Vortex X1</h4>
+                <p>
+                  The perfect blend of luxury and performance. Experience
+                  unmatched driving dynamics and comfort.
+                </p>
+                <div class="product-price">
+                  <span class="price">From $85,000</span>
+                  <button class="btn-order">Configure</button>
+                </div>
+              </div>
+            </div>
+            <!-- Repeat for other product cards with unique content -->
           </div>
         </section>
 
-        <section class="contact">
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
           <div class="contact-container">
-            <img src="images/C5.jpg" alt="Contact image" />
-            <form class="contact-form">
+            <div class="contact-media animate-on-scroll">
+              <img src="images/C5.jpg" alt="Contact Veloce Motors" />
+              <div class="contact-overlay"></div>
+            </div>
+            <form class="contact-form animate-on-scroll" id="contactForm">
+              <div class="form-header">
+                <h2>Get in Touch</h2>
+                <p>We'd love to hear from you</p>
+              </div>
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Your name</label>
-                  <input type="text" id="name" placeholder="Name" />
+                  <input type="text" id="name" name="name" placeholder="Enter your name" required />
+                  <div class="error-message"></div>
                 </div>
                 <div class="form-group">
                   <label for="email">Your email</label>
-                  <input type="email" id="email" placeholder="Email" />
+                  <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                  <div class="error-message"></div>
                 </div>
               </div>
               <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea id="message" placeholder="Message"></textarea>
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+                <div class="error-message"></div>
               </div>
-              <button type="submit" class="btn-submit">Send Message</button>
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+                <div class="error-message"></div>
+              </div>
+              <button type="submit" class="btn-submit">
+                Send Message
+                <i class="fas fa-paper-plane"></i>
+              </button>
             </form>
           </div>
         </section>
       </main>
 
+      <!-- Footer -->
       <footer class="footer">
-        <div class="footer-brand">
-          <h2>Veloce Motors</h2>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
-          <div class="social-icons">
-            <a href="#"><span class="icon-facebook"></span></a>
-            <a href="#"><span class="icon-twitter"></span></a>
-            <a href="#"><span class="icon-instagram"></span></a>
-            <a href="#"><span class="icon-linkedin"></span></a>
+        <div class="footer-content">
+          <div class="footer-brand">
+            <img src="images/logo.svg" alt="Veloce Motors Logo" class="footer-logo" />
+            <p>
+              Veloce Motors is dedicated to crafting exceptional vehicles that
+              combine luxury, performance, and innovation. Experience the
+              difference today.
+            </p>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Twitter" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" aria-label="Instagram" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <div class="link-group">
+              <h3>About</h3>
+              <a href="#about">Our Story</a>
+              <a href="#features">Features</a>
+              <a href="#news">News & Blogs</a>
+              <a href="#support">Help & Support</a>
+            </div>
+            <div class="link-group">
+              <h3>Company</h3>
+              <a href="#work">How we work</a>
+              <a href="#terms">Terms of service</a>
+              <a href="#pricing">Pricing</a>
+              <a href="#faq">FAQ</a>
+            </div>
+            <div class="link-group">
+              <h3>Contact Us</h3>
+              <address>
+                <p><i class="fas fa-map-marker-alt"></i> Malabe, Sri Lanka</p>
+                <p><i class="fas fa-phone"></i> +94 11 000000</p>
+                <p><i class="fas fa-envelope"></i> velocemotors@gmail.com</p>
+                <p><i class="fas fa-globe"></i> www.velocemotors.com</p>
+              </address>
+            </div>
           </div>
         </div>
-        <div class="footer-links">
-          <div class="link-group">
-            <h3>About</h3>
-            <a href="#">Menu</a>
-            <a href="#">Features</a>
-            <a href="#">News & Blogs</a>
-            <a href="#">Help & Supports</a>
-          </div>
-          <div class="link-group">
-            <h3>Company</h3>
-            <a href="#">How we work</a>
-            <a href="#">Terms of service</a>
-            <a href="#">Pricing</a>
-            <a href="#">FAQ</a>
-          </div>
-          <div class="link-group">
-            <h3>Contact Us</h3>
-            <p>Malabe,<br />Sri Lanka</p>
-            <p>+94 11 000000</p>
-            <p>velocemotors@gmail.com</p>
-            <p>www.velocemotors.com</p>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Veloce Motors. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Use</a>
+            <a href="#cookies">Cookie Policy</a>
           </div>
         </div>
       </footer>
     </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
+        <h2 id="modalTitle" class="modal-title"></h2>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="home.js"></script>
   </body>
 </html>

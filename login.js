@@ -1,114 +1,197 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Toggle password visibility
-  const togglePasswordBtn = document.querySelector('.toggle-password');
+  // DOM Elements
+  const loginForm = document.getElementById('loginForm');
+  const emailInput = document.getElementById('email');
   const passwordInput = document.getElementById('password');
+  const togglePasswordBtn = document.querySelector('.toggle-password');
+  const loginBtn = document.querySelector('.login-btn');
+  const errorToast = document.getElementById('errorToast');
   
+  // Form validation state
+  let isFormValid = false;
+  
+  // Toggle password visibility
   togglePasswordBtn.addEventListener('click', function() {
-      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-      passwordInput.setAttribute('type', type);
-      
-      // Toggle the eye icon visual state
-      this.classList.toggle('show-password');
-  });
-
-  // Form validation and submission
-  const loginForm = document.querySelector('.form-fields');
-  const loginBtn = document.querySelector('.create-account-btn');
-  
-  loginBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      const email = document.getElementById('email').value;
-      const password = passwordInput.value;
-      const rememberMe = document.getElementById('terms').checked;
-      
-      // Basic validation
-      if (!email || !password) {
-          alert('Please fill in both email and password fields.');
-          return;
-      }
-      
-      if (!validateEmail(email)) {
-          alert('Please enter a valid email address.');
-          return;
-      }
-      
-      // In a real application, you would send this data to your server
-      console.log('Login attempt with:', { email, password, rememberMe });
-      
-      // For demo purposes, we'll simulate a successful login
-      simulateLogin();
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    
+    // Update icon
+    const icon = this.querySelector('i');
+    icon.classList.toggle('fa-eye');
+    icon.classList.toggle('fa-eye-slash');
   });
   
-  // Email validation function
+  // Input validation
   function validateEmail(email) {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(email);
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
   }
   
-  // Simulate login (replace with actual API call)
-  function simulateLogin() {
-      // Show loading state
-      loginBtn.textContent = 'Logging in...';
-      loginBtn.disabled = true;
+  function validatePassword(password) {
+    return password.length >= 6;
+  }
+  
+  function showError(input, message) {
+    const field = input.closest('.input-field');
+    field.classList.add('error');
+    
+    // Add error message if it doesn't exist
+    let errorMessage = field.querySelector('.error-message');
+    if (!errorMessage) {
+      errorMessage = document.createElement('div');
+      errorMessage.className = 'error-message';
+      field.appendChild(errorMessage);
+    }
+    errorMessage.textContent = message;
+  }
+  
+  function clearError(input) {
+    const field = input.closest('.input-field');
+    field.classList.remove('error');
+    const errorMessage = field.querySelector('.error-message');
+    if (errorMessage) {
+      errorMessage.textContent = '';
+    }
+  }
+  
+  function validateInput(input) {
+    const value = input.value.trim();
+    let isValid = true;
+    
+    if (input === emailInput) {
+      if (!value) {
+        showError(input, 'Email is required');
+        isValid = false;
+      } else if (!validateEmail(value)) {
+        showError(input, 'Please enter a valid email address');
+        isValid = false;
+      } else {
+        clearError(input);
+      }
+    } else if (input === passwordInput) {
+      if (!value) {
+        showError(input, 'Password is required');
+        isValid = false;
+      } else if (!validatePassword(value)) {
+        showError(input, 'Password must be at least 6 characters');
+        isValid = false;
+      } else {
+        clearError(input);
+      }
+    }
+    
+    return isValid;
+  }
+  
+  // Real-time validation
+  [emailInput, passwordInput].forEach(input => {
+    input.addEventListener('input', function() {
+      validateInput(this);
+      updateFormValidity();
+    });
+    
+    input.addEventListener('blur', function() {
+      validateInput(this);
+      updateFormValidity();
+    });
+  });
+  
+  function updateFormValidity() {
+    isFormValid = validateInput(emailInput) && validateInput(passwordInput);
+    loginBtn.disabled = !isFormValid;
+  }
+  
+  // Show toast message
+  function showToast(message, duration = 3000) {
+    errorToast.textContent = message;
+    errorToast.classList.add('show');
+    
+    setTimeout(() => {
+      errorToast.classList.remove('show');
+    }, duration);
+  }
+  
+  // Demo credentials
+  const DEMO_CREDENTIALS = {
+    email: 'user@demo.com',
+    password: '12345678'
+  };
+  
+  // Form submission
+  loginForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    if (!isFormValid) {
+      showToast('Please fix the errors in the form');
+      return;
+    }
+    
+    // Show loading state
+    loginBtn.classList.add('loading');
+    loginForm.classList.add('loading');
+    
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Simulate API call delay
-      setTimeout(function() {
-          // Redirect to home page after "successful" login
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+      
+      // Check demo credentials
+      if (email === DEMO_CREDENTIALS.email && password === DEMO_CREDENTIALS.password) {
+        showToast('Login successful! Redirecting...', 'success');
+        
+        // Store demo session
+        sessionStorage.setItem('isDemoUser', 'true');
+        
+        setTimeout(() => {
           window.location.href = 'home.html';
-          
-          // In a real app, you would:
-          // 1. Make an actual API call to your authentication endpoint
-          // 2. Handle the response (success/error)
-          // 3. Store the auth token if successful
-          // 4. Redirect or show error message
-      }, 1500);
-  }
+        }, 1000);
+      } else {
+        showToast('Invalid email or password');
+      }
+      
+    } catch (error) {
+      showToast('Login failed. Please try again.');
+      console.error('Login error:', error);
+    } finally {
+      loginBtn.classList.remove('loading');
+      loginForm.classList.remove('loading');
+    }
+  });
   
-  // Social login button handlers
+  // Social login handlers
   const socialButtons = document.querySelectorAll('.social-btn');
   
   socialButtons.forEach(button => {
-      button.addEventListener('click', function() {
-          let provider;
-          
-          if (this.classList.contains('facebook')) {
-              provider = 'Facebook';
-          } else if (this.classList.contains('google')) {
-              provider = 'Google';
-          } else if (this.classList.contains('apple')) {
-              provider = 'Apple';
-          }
-          
-          console.log(`Attempting ${provider} login`);
-          alert(`${provider} login would be implemented here.\nIn a real app, this would redirect to ${provider} OAuth.`);
-          
-          // In a real application, you would:
-          // 1. Redirect to the provider's OAuth endpoint
-          // 2. Handle the callback with the authentication token
-          // 3. Exchange the token with your backend
-          // 4. Complete the login process
-      });
-  });
-  
-  // Enhance the form with input focus effects
-  const inputFields = document.querySelectorAll('.input-field input');
-  
-  inputFields.forEach(input => {
-      // Add focus/blur classes for better UX
-      input.addEventListener('focus', function() {
-          this.parentElement.classList.add('focused');
-      });
+    button.addEventListener('click', async function() {
+      const provider = this.classList.contains('google') ? 'Google' :
+                      this.classList.contains('facebook') ? 'Facebook' : 'Apple';
       
-      input.addEventListener('blur', function() {
-          if (!this.value) {
-              this.parentElement.classList.remove('focused');
-          }
-      });
+      // Show loading state
+      this.classList.add('loading');
       
-      // Initialize fields that already have values
-      if (input.value) {
-          input.parentElement.classList.add('focused');
+      try {
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // In a real application, you would:
+        // 1. Redirect to the provider's OAuth endpoint
+        // 2. Handle the callback with the authentication token
+        // 3. Exchange the token with your backend
+        // 4. Complete the login process
+        
+        showToast(`${provider} login would be implemented here`);
+        
+      } catch (error) {
+        showToast(`${provider} login failed. Please try again.`);
+        console.error(`${provider} login error:`, error);
+      } finally {
+        this.classList.remove('loading');
       }
+    });
   });
+  
+  // Initialize form state
+  updateFormValidity();
 });
