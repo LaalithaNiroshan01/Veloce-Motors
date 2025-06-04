@@ -191,7 +191,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-  Made with ❤️ by [Your Name]
+  Made with ❤️ by Laalitha Niroshan
   
   [Report Bug](https://github.com/yourusername/Veloce-Motors/issues) · 
   [Request Feature](https://github.com/yourusername/Veloce-Motors/issues)
